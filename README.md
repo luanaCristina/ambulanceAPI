@@ -36,12 +36,16 @@ Negócio:
 * Railway
 
 ## Melhorias futuras
-* No POST messagens retornar sem os campos de senha.
+* No POST/GET mensagens, agente de trânsito, motorista, coordenador.
 * Adicionar segurança para que apenas os usuários com sessão validada tenha acesso aos dados que consta na API.
 * Adicionar PACTH para atualizar os usuários e mensagens.
 * Adicionar DELETE para excluir usuários e mensagens que não trabalham mais na área ou outro motivo que necessite excluir o usuário ou a mensagem.
 * Adicionar GET para retornar apenas as mensagens por data atual e horário, por exemplo: data de hoje ou hora da manhã.
-* Usar o yup para solicitar os campos requeridos em todos os usuários em mensagem e definir a quantidade mínima e máxima de cada campo.
+*  Estimativa: Aqui seria uma estimativa de acordo com o trânsito da rota escolhida para poder enviar para os agentes terem uma perspectiva de qual momento deve liberar o trânsito em caso de tráfego.
+* Horários de picos: Conectar com aplicações que têm essas informações em tempo real ou pegar essas informações de um local que tenha essas informações.
+* Semáforos: Pesquisa para saber se tem como manipular os semáforos para liberar quando o motorista estiver perto. Pode ser pelo aplicativo que vai reconhecendo a rota assim como ocorre no waze ou utilizando o próprio waze ou google api e aí vai ativando ou enviando uma mensagem para o responsável de manipular o semáforo para abrir na rota que a ambulância está passando e fechar os demais. 
+* Pacientes: Informações sobre o paciente (alergias, triagem, tipo sanguíneo, etc) para o hospital se preparar ou saber se haverá vaga para ele lá.
+* Hospitais v.1.2: Aqui vai ter informações sobre a especialidade do hospital para atendimento.
 * Adicionar feedbacks para o usuário quando houver um erro ou quando demorar o retorno da aplicação.
 * Adicionar as melhorias relacionado aos feedbacks da apresentação do projeto ou dos testes realizados.
 
@@ -86,17 +90,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
