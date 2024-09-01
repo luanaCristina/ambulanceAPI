@@ -26,13 +26,14 @@ Negócio:
 
 ![Funcionamento API Alert Ambulance Traffic](FuncionamentoAPIAlertAmbulanceTraffic.png)
 
-## Ferramentas, linguagens e arquitetura utilizadas
+## Ferramentas, linguagens e tecnologias
 * Node.js
-* Express.js
-* Nodemon
-* mongoDB
-* Postman
-* MVC
+* Git/GitHub
+* NestJS
+* PostgreSQL
+* Bruno
+* SWAGGER
+* Railway
 
 ## Melhorias futuras
 * No POST messagens retornar sem os campos de senha.
