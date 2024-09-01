@@ -8,10 +8,10 @@ services:
         max-size: "10m"
         max-file: "5"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: P3r1g0
+      POSTGRES_USER: DB_USERNAME
+      POSTGRES_PASSWORD: DB_PASSWORD
       POSTGRES_DB: ambulanceAPI
     volumes:
-      - ./data:/LuanaTW/Library/PostgreSQL/15/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 5432:5432
