@@ -1,26 +1,54 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Projeto Alert Ambulance in Traffic - Projeto Final Reprograma Luana Cristina
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+O objetivo dessa API é receber mensagens da localidade em que a ambulância está e para onde está indo e quando estiver em engarrafamento ou trânsito lento enviar mensagens informando a rua e sentido que está indo para os agentes de trânsito gerenciar o tráfego para a ambulância passar com facilidade e sem esperar muito tempo.
+As mensagens serão trocadas entre o responsável pela ambulância (o motorista) e os agentes de trânsito.
+O que motivou a realizar essa API foi depois de ter observado diversas vezes ao passar pelo trânsito lento pilotando a moto pelo corredor e verificar que a sirene da ambulância não dar para ouvir em certa distância e o agente de trânsito não escuta há tempo de agilizar a passagem dos carros da rua em que a ambulância está para que ela chegue ao seu destino com mais rapidez.
+Negócio:
+1. O acesso a API será realizada apenas por meio dos agentes cadastrados e autorizados pelo órgão responsável (CTTU) e os motoristas das ambulâncias cadastrados e autorizados pelas prefeituras;
+2. Apenas os agentes de trânsito e motorista da ambulância cadastrados e autorizados poderão fazer o login na API;
+3. Inicialmente todos os agentes que tem o smartphone adquiridos pela CTTU. E depois para os agentes de trânsitos que estiverem trabalhando no dia em que a ambulância estiver na rua com pacientes.
+4. Inicialmente funcionará apenas para a cidade do Recife e sua região metropolitana.
+5. As mensagens terão o nome do responsável, placa da ambulância, local de partida e destino. A mensagem deve ser enviada no momento que ambulância estiver saindo do local que estiver socorrendo ou tranferindo o paciente. E deve ser enviada outra mensagem se estiver em um trânsito lento ou parado. 
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Referências
+
+* http://www2.recife.pe.gov.br/node/289274
+* https://ieeexplore.ieee.org/abstract/document/7972255
+* https://d1wqtxts1xzle7.cloudfront.net/34427407/IIJEC-2014-07-03-3.pdf?1407884826=&response-content-disposition=inline%3B+filename%3DIPASJ_International_Journal_of_Electroni.pdf&Expires=1607005524&Signature=IVPbB-nVg9sy1r-FljO9ao68e96bP2NgDPzT2~KMA1C0h0hU7YwIWCpVSP0n-V4MktpFSUTQazUGcJ2pvhIoGJhzv0HdGTG58u~IT4AhJuW~sMelqeZECORL~DR0rMIqnnF80697KDK6~Uxe6gwWN2LB2RvBkw4adfSgzQhiPumBxPgkSNOxnFhtbGlqxvdNrY2PVr1KTWCwHXV1PiYUGp371EjEkmWmxMwxbGCZzu2fiiK71EKDswp548hz~S8B4HgQ4QFG2QGDp8f5Qcm8XMDz-49QZtYdCPaAT6nEJhQZ0VlzX5GLdl-ftj45WUHkn4j7xPU0FHmDIfQThVc9sQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA
+* https://patents.google.com/patent/US8612131B2/en
+* https://d1wqtxts1xzle7.cloudfront.net/39023780/42_Automatic.pdf?1444126631=&response-content-disposition=inline%3B+filename%3D42_Automatic.pdf&Expires=1607005536&Signature=Ug1-B2ozibKfsvwrGuAZ~0L6Tz~Et282sFUbdmsl7dnI4rEdKTMt9cMqjvEWZNZkSxfpCPE~ONcWoz2Mf8pVPkstzjUqe3j1uGMlWOU5KRNINtyjCSTrxs5SvTMqWn1P88lRnnZyTTV8fHt74wrOrkdqXszPTUlDBURJ6IKxtzBrlTgLKIMoU5wjPHmTZ1MP5k1AjrCSP3h1mu~Z82j9R0k0v4XP-9eRre2LViJ63kwhGpi~iIdpIIinS1SJyiMn9JQvE~uRPHqqy9Vl6MCxdC780uwcsvWhx1CrhI74qRPM5oGbAMjSWW8CkEPFCOw~rV4K4l4fuL3nRDFDEnjfLg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA
+* http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.675.3045&rep=rep1&type=pdf
+* https://www.semanticscholar.org/paper/An-Approach-towards-Traffic-Management-System-using-Shaikh-Chandak/fb24269fb2ae1cc53dc22bdfea675d7e163c1264?p2df
+
+
+
+## Diagrama do funcionamento da api
+
+![Funcionamento API Alert Ambulance Traffic](FuncionamentoAPIAlertAmbulanceTraffic.png)
+
+## Ferramentas, linguagens e arquitetura utilizadas
+* Node.js
+* Express.js
+* Nodemon
+* mongoDB
+* Postman
+* MVC
+
+## Melhorias futuras
+* No POST messagens retornar sem os campos de senha.
+* Adicionar segurança para que apenas os usuários com sessão validada tenha acesso aos dados que consta na API.
+* Adicionar PACTH para atualizar os usuários e mensagens.
+* Adicionar DELETE para excluir usuários e mensagens que não trabalham mais na área ou outro motivo que necessite excluir o usuário ou a mensagem.
+* Adicionar GET para retornar apenas as mensagens por data atual e horário, por exemplo: data de hoje ou hora da manhã.
+* Usar o yup para solicitar os campos requeridos em todos os usuários em mensagem e definir a quantidade mínima e máxima de cada campo.
+* Adicionar feedbacks para o usuário quando houver um erro ou quando demorar o retorno da aplicação.
+* Adicionar as melhorias relacionado aos feedbacks da apresentação do projeto ou dos testes realizados.
+
+## Canvas do projeto
+[Apresentação](https://www.canva.com/design/DAGOyq7vdH4/2B9bTcc6UosOmtywNwI2-w/edit?utm_content=DAGOyq7vdH4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+## Rotas
+[SWAGGER](http://localhost:3002/api) 
 
 ## Description
 
