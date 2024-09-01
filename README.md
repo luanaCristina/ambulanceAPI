@@ -36,6 +36,8 @@ Negócio:
 * Railway
 
 ## Melhorias futuras
+* Estruturar o código na arquitetura hexadecimal
+* adicionar a api do google para definir a rota que será seguida.
 * No POST/GET mensagens, agente de trânsito, motorista, coordenador.
 * Adicionar segurança para que apenas os usuários com sessão validada tenha acesso aos dados que consta na API.
 * Adicionar PACTH para atualizar os usuários e mensagens.
